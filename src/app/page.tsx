@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -14,14 +15,17 @@ import {
   Truck,
   Headphones,
   MapPin,
+  ShieldCheck,
 } from 'lucide-react';
 import { useLang } from '@/context/LangContext';
 import { BUSINESS, buildWhatsAppUrl, WHATSAPP_MESSAGES } from '@/data/business';
 import ProductCard from '@/components/ProductCard';
-import { PRODUCTS } from '@/data/products';
+import ProductDetailModal from '@/components/ProductDetailModal';
+import { PRODUCTS, Product } from '@/data/products';
 
 export default function HomePage() {
   const { t, lang } = useLang();
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const whyUsIcons = [Award, Package, Truck, Users, Headphones, MapPin];
 
@@ -121,15 +125,8 @@ export default function HomePage() {
             {PRODUCTS.map((product) => (
               <ProductCard
                 key={product.id}
-                title={product.name}
-                titleTA={product.nameTA}
-                description={product.description}
-                descriptionTA={product.descriptionTA}
-                image={product.image}
-                imageAlt={product.imageAlt}
-                whatsappMessage={product.whatsappMessage}
-                categoryLabel={product.categoryLabel}
-                slug={product.slug}
+                product={product}
+                onOpenModal={(p) => setSelectedProduct(p)}
               />
             ))}
           </div>
@@ -149,12 +146,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image side */}
             <div className="relative">
-              <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-xl bg-warm-cream flex items-center justify-center p-4 border border-amber-900/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80"
-                  alt="Farm cattle - K.S. Raja Cattle Feeds Salem"
+                  src="/images/products/cattle/ks-raja-cattle-feed-red-50kg.png"
+                  alt="Official K.S. Raja Cattle Feed 50kg packaging"
                   fill
-                  className="object-cover"
+                  className="object-contain p-2"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
@@ -263,6 +260,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Product Detail Modal */}
+      <ProductDetailModal
+        product={selectedProduct}
+        isOpen={Boolean(selectedProduct)}
+        onClose={() => setSelectedProduct(null)}
+      />
     </>
   );
 }

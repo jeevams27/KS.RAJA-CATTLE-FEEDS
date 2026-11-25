@@ -64,33 +64,35 @@ export default function AboutPage() {
               {
                 icon: Truck,
                 title: 'Cattle Feed',
-                img: 'https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=600&q=80',
-                alt: 'Cattle feed - K.S. Raja Salem',
+                img: '/images/products/cattle/ks-raja-cattle-feed-red-50kg.png',
+                alt: 'Official K.S. Raja Cattle Feed packaging 50kg',
               },
               {
                 icon: Package,
                 title: 'Goat Feed',
-                img: 'https://images.unsplash.com/photo-1524024973431-2ad916746881?w=600&q=80',
-                alt: 'Goat feed - K.S. Raja Salem',
+                img: '/images/products/goat/ks-raja-goat-feed-35kg.jpg',
+                alt: 'Official K.S. Raja Goat Feed packaging 35kg',
               },
               {
                 icon: Users,
                 title: 'Poultry Feed',
-                img: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&q=80',
-                alt: 'Poultry feed - K.S. Raja Salem',
+                img: '/images/products/cattle/ks-raja-cattle-feed-green-50kg.png',
+                alt: 'K.S. Raja Animal Feeds product range',
               },
             ].map((item) => (
-              <div key={item.title} className="bg-warm-cream rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="relative h-44">
+              <div key={item.title} className="bg-warm-cream rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-amber-900/10">
+                <div className="relative h-48 bg-white/70 flex items-center justify-center p-2">
                   <Image
                     src={item.img}
                     alt={item.alt}
                     fill
-                    className="object-cover"
+                    className="object-contain p-2"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-forest-green/50 flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">{item.title}</span>
+                  <div className="absolute top-2 left-2">
+                    <span className="bg-forest-green/90 text-white text-xs font-bold px-2.5 py-1 rounded-md">
+                      {item.title}
+                    </span>
                   </div>
                 </div>
                 <div className="p-5">

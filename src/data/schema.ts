@@ -48,24 +48,26 @@ export const localBusinessSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
-          name: 'Cattle Feed',
-          description: 'Quality cattle feed for dairy and farm cattle. Available in 50 kg bags.',
+          name: 'K.S. Raja Cattle Feed (50 kg)',
+          description: 'Official K.S. Raja Cattle Feed (No.1 கலப்பு தீவனம்) in 50 kg bag packaging for dairy and farm cattle.',
+          image: 'https://ksrajacattlefeeds.in/images/products/cattle/ks-raja-cattle-feed-red-50kg.png',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
-          name: 'Goat Feed',
-          description: 'Quality goat feed for all life stages.',
+          name: 'K.S. Raja Goat Feed (35 kg)',
+          description: 'Official K.S. Raja Goat Feed (High Weight Gain / No.1 அதிக புரதச்சத்து நிறைந்த ஆட்டு தீவனம்) in 35 kg bag packaging.',
+          image: 'https://ksrajacattlefeeds.in/images/products/goat/ks-raja-goat-feed-35kg.jpg',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
-          name: 'Poultry Feed',
-          description: 'Quality poultry feed for broiler and layer birds.',
+          name: 'K.S. Raja Poultry Feed',
+          description: 'Poultry feed supply for broiler and layer bird operations in Kadayampatti, Salem district.',
         },
       },
     ],

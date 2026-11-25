@@ -187,14 +187,24 @@ The site supports **English** and **Tamil (தமிழ்)**.
 
 ---
 
-## 🖼️ Images
+## 🖼️ Product Images and File Organization
 
-The site uses [Unsplash](https://unsplash.com) for high-quality farm and livestock photography.
+Actual product packaging photographs are organized cleanly under `public/images/products/`:
 
-To use your own product images:
-1. Add images to the `public/images/` directory.
-2. Reference them as `/images/your-image.jpg` in `src/data/products.ts`.
-3. Update `next.config.js` if using an external image host (not Unsplash).
+```
+public/images/products/
+├── cattle/
+│   ├── ks-raja-cattle-feed-red-50kg.png    (50 KGS Cattle Feed - Red Border)
+│   └── ks-raja-cattle-feed-green-50kg.png  (50 KGS Cattle Feed - Green Border)
+├── goat/
+│   └── ks-raja-goat-feed-35kg.jpg          (35 KGS Goat Feed - High Weight Gain)
+└── poultry/                                (Poultry feed packaging)
+```
+
+To add new product photographs:
+1. Save high-resolution bag photos into the matching category directory above.
+2. Update the product entries in `src/data/products.ts`.
+3. Re-run `npm run build`.
 
 ---
 
